@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>comments</title>
+</head>
+<body>
+	<div class="container" id="posts">
+	<div class="row">
+  <div class="leftcolumn">
+  	{% for e in PostData %}
+    <div class="card" id="cards">
+      <h2>{{e[0]}}</h2>
+      <h3>{{e[1]}}</h3>
+    </div>
+     {% endfor %}
+  </div>
+<!--   <form action="" method="POST" >
+		<p>Comment: <input type="text" name="comment" ></p>
+		<p><input type="submit" value="Click here to submit"></p>
+	</form>
+ -->
+ {{% PID %}}
+	  <form action="{{url_for('comment',PID)}}" method="POST" >
+		<p>Comment: <input type="text" name="comment" ></p>
+		<p><input type="submit" value="Click here to submit"></p>
+	</form>
+
+
+	<div class="leftcolumn">
+  	{% for e in Comments %}
+    <div class="card" id="cards">
+      <h6>{{e[0]}}</h6>
+    </div>
+     {% endfor %}
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>

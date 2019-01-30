@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WELCOME</title>
+</head>
+<body>
+ <h1>HELLO WORLD</h1>
+ <form action="/signup" method="POST">
+ <p>UserId/RollNo:<input type="text" name="userId"></p>
+ <p>Name: <input type="text" name="name"></p>
+ <p>Email:<input type="email" name="email"></p>
+ <p>Password:<input type="Password" name="pwd"></p>
+ <p>Confirm Password:<input type="Password" name="cpwd"></p>
+ <input type="submit" name="Register">
+ </form>
+ <p><a href="/login">Login</a></p>
+
+  <div class="flashes">
+  {% for message in get_flashed_messages() %}
+    {{ message }}
+  {% endfor %}
+</div>
+</body>
+
+</html>
